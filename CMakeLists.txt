@@ -1,19 +1,18 @@
-
 cmake_minimum_required(VERSION 3.5)
 
 if (POLICY CMP0071)
   cmake_policy(SET CMP0071 NEW)
 endif()
 
-set(KF5_VERSION "5.65.0") # handled by release scripts
+set(KF5_VERSION "5.66.0") # handled by release scripts
 project(Grantlee5 VERSION ${KF5_VERSION})
 
 include(FeatureSummary)
-find_package(ECM 5.64.0 CONFIG)
+find_package(ECM 5.65.0 CONFIG)
 set_package_properties(ECM PROPERTIES
   TYPE REQUIRED
   DESCRIPTION "Extra CMake Modules."
-  URL "https://projects.kde.org/projects/kdesupport/extra-cmake-modules"
+  URL "https://commits.kde.org/extra-cmake-modules"
 )
 feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
@@ -23,7 +22,7 @@ include(KDEInstallDirs)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 
-set(REQUIRED_QT_VERSION 5.2.0)
+set(REQUIRED_QT_VERSION 5.12.0)
 find_package(Qt5Core ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE)
 find_package(Qt5Gui ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE)
 find_package(Qt5Qml ${REQUIRED_QT_VERSION} NO_MODULE)
