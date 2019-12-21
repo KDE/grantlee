@@ -24,8 +24,8 @@
 #include "abstractmarkupbuilder.h"
 #include "grantlee_textdocument_export.h"
 
-#include <QtGui/QTextDocument>
-#include <QtGui/QTextFrame>
+#include <QTextDocument>
+#include <QTextFrame>
 
 class QTextTable;
 class QTextTableCell;

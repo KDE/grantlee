@@ -3,8 +3,8 @@
 
 #include "localrequestmanager.h"
 
-#include <QtCore/QDebug>
-#include <QtCore/QFile>
+#include <QDebug>
+#include <QFile>
 
 #include "templatereply.h"
 

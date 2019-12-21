@@ -23,7 +23,7 @@
 #include "metaenumvariable_p.h"
 #include "metatype.h"
 
-#include <QtCore/QStringList>
+#include <QStringList>
 
 QString Grantlee::unescapeStringLiteral(const QString &input)
 {

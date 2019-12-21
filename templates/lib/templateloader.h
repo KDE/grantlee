@@ -24,7 +24,7 @@
 #include "grantlee_templates_export.h"
 #include "template.h"
 
-#include <QtCore/QSharedPointer>
+#include <QSharedPointer>
 
 namespace Grantlee
 {

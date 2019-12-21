@@ -23,19 +23,19 @@
 
 #include "abstractmarkupbuilder.h"
 
-#include <QtCore/QFlags>
-#include <QtCore/QMap>
-#include <QtCore/QStack>
-#include <QtCore/QString>
-#include <QtGui/QBrush>
-#include <QtGui/QColor>
-#include <QtGui/QTextCharFormat>
-#include <QtGui/QTextCursor>
-#include <QtGui/QTextDocument>
-#include <QtGui/QTextDocumentFragment>
-#include <QtGui/QTextFrame>
-#include <QtGui/QTextList>
-#include <QtGui/QTextTable>
+#include <QFlags>
+#include <QMap>
+#include <QStack>
+#include <QString>
+#include <QBrush>
+#include <QColor>
+#include <QTextCharFormat>
+#include <QTextCursor>
+#include <QTextDocument>
+#include <QTextDocumentFragment>
+#include <QTextFrame>
+#include <QTextList>
+#include <QTextTable>
 
 using namespace Grantlee;
 

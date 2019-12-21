@@ -23,7 +23,7 @@
 
 #include "grantlee_templates_export.h"
 
-#include <QtCore/QVariant>
+#include <QVariant>
 
 namespace Grantlee
 {

@@ -23,8 +23,8 @@
 
 #include "grantlee_templates_export.h"
 
-#include <QtCore/QSharedPointer>
-#include <QtCore/QTextStream>
+#include <QSharedPointer>
+#include <QTextStream>
 
 namespace Grantlee
 {

@@ -22,7 +22,7 @@
 
 #include "parser.h"
 
-#include <QtQml/QJSEngine>
+#include <QJSEngine>
 
 ScriptableParser::ScriptableParser(Grantlee::Parser *p, QJSEngine *engine)
     : QObject(engine), m_p(p), m_engine(engine)

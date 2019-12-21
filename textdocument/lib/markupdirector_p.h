@@ -23,7 +23,7 @@
 
 #include "markupdirector.h"
 
-#include <QtCore/QSet>
+#include <QSet>
 
 //@cond PRIVATE
 

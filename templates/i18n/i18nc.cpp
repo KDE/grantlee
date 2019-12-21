@@ -20,7 +20,7 @@
 
 #include "i18nc.h"
 
-#include <QtCore/QStringList>
+#include <QStringList>
 
 #include "abstractlocalizer.h"
 #include "engine.h"
@@ -28,7 +28,7 @@
 #include "parser.h"
 #include "template.h"
 
-#include <QtCore/QDebug>
+#include <QDebug>
 #include <complex>
 #include <util.h>
 

@@ -23,7 +23,7 @@
 
 #include "grantlee_templates_export.h"
 
-#include <QtCore/QObject>
+#include <QObject>
 
 /// @file
 

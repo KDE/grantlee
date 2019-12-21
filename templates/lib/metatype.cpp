@@ -24,7 +24,7 @@
 #include "customtyperegistry_p.h"
 #include "metaenumvariable_p.h"
 
-#include <QtCore/QDebug>
+#include <QDebug>
 
 using namespace Grantlee;
 

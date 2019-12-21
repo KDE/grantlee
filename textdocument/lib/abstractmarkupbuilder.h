@@ -23,8 +23,8 @@
 
 #include "grantlee_textdocument_export.h"
 
-#include <QtCore/QString>
-#include <QtGui/QTextListFormat>
+#include <QString>
+#include <QTextListFormat>
 
 class QBrush;
 

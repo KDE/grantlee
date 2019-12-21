@@ -25,7 +25,7 @@
 #include "grantlee_templates_export.h"
 #include "safestring.h"
 
-#include <QtCore/QVariant>
+#include <QVariant>
 
 /// @file util.h Utility functions used throughout %Grantlee.
 

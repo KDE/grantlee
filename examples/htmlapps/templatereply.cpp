@@ -3,7 +3,7 @@
 
 #include <grantlee/outputstream.h>
 
-#include <QtCore/QDebug>
+#include <QDebug>
 
 TemplateReply::TemplateReply(const QNetworkRequest &req,
                              const QNetworkAccessManager::Operation op,

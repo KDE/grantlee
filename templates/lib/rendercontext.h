@@ -23,7 +23,7 @@
 
 #include "grantlee_templates_export.h"
 
-#include <QtCore/QVariantHash>
+#include <QVariantHash>
 
 /// @headerfile rendercontext.h grantlee/rendercontext.h
 

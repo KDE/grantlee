@@ -3,7 +3,7 @@
 
 #include <QHBoxLayout>
 #include <QWebView>
-#include <QtCore/QDebug>
+#include <QDebug>
 
 #include "grantlee_paths.h"
 #include <grantlee_templates.h>

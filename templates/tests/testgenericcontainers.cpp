@@ -26,11 +26,11 @@
 #include "test_macros.h"
 
 #include "coverageobject.h"
-#include <QtCore/QLinkedList>
-#include <QtCore/QQueue>
-#include <QtCore/QStack>
-#include <QtCore/QVariant>
-#include <QtTest/QTest>
+#include <QLinkedList>
+#include <QQueue>
+#include <QStack>
+#include <QVariant>
+#include <QTest>
 
 class TestGenericContainers : public CoverageObject
 {

@@ -18,13 +18,13 @@
 
 */
 
-#include <QtCore/QRegularExpression>
+#include <QRegularExpression>
 #include <QtCore>
-#include <QtGui/QTextCursor>
-#include <QtGui/QTextDocument>
-#include <QtGui/QTextLine>
-#include <QtTest/QtTest>
-#include <QtTest/qtestevent.h>
+#include <QTextCursor>
+#include <QTextDocument>
+#include <QTextLine>
+#include <QtTest>
+#include <qtestevent.h>
 
 #include "coverageobject.h"
 #include "markupdirector.h"

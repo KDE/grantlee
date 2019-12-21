@@ -21,8 +21,8 @@
 #ifndef GRANTLEE_PLUGINPOINTER_H
 #define GRANTLEE_PLUGINPOINTER_H
 
-#include <QtCore/QPluginLoader>
-#include <QtCore/QSharedPointer>
+#include <QPluginLoader>
+#include <QSharedPointer>
 
 namespace Grantlee
 {

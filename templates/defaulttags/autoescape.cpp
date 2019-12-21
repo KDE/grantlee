@@ -25,7 +25,7 @@
 #include "template.h"
 #include "util.h"
 
-#include <QtCore/QFile>
+#include <QFile>
 
 AutoescapeNodeFactory::AutoescapeNodeFactory() {}
 

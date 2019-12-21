@@ -21,7 +21,7 @@
 #ifndef GRANTLEE_METAENUMVARIABLE_P_H
 #define GRANTLEE_METAENUMVARIABLE_P_H
 
-#include <QtCore/QMetaEnum>
+#include <QMetaEnum>
 
 struct MetaEnumVariable {
   MetaEnumVariable() : value(-1) {}

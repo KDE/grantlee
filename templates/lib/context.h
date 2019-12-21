@@ -24,7 +24,7 @@
 #include "abstractlocalizer.h"
 #include "grantlee_templates_export.h"
 
-#include <QtCore/QVariantHash>
+#include <QVariantHash>
 
 namespace Grantlee
 {
