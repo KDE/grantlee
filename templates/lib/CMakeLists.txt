@@ -106,7 +106,7 @@ if (Qt5Qml_FOUND)
   )
 endif()
 
-if (BUILD_TESTS)
+if (BUILD_TESTING)
   set(GRANTLEE_TESTS_EXPORT "GRANTLEE_TEMPLATES_EXPORT")
 endif()
 

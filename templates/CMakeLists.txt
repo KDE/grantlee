@@ -16,6 +16,6 @@ if (BUILD_I18N_PLUGIN)
   add_subdirectory(i18n)
 endif()
 
-if (BUILD_TESTS)
+if (BUILD_TESTING)
   add_subdirectory(tests)
 endif()
