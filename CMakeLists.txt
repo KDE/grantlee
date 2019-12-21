@@ -5,16 +5,41 @@ if (POLICY CMP0071)
   cmake_policy(SET CMP0071 NEW)
 endif()
 
-project(Grantlee5 VERSION 5.2.0)
+set(KF5_VERSION "5.65.0") # handled by release scripts
+project(Grantlee5 VERSION ${KF5_VERSION})
 
-# Workaround for http://public.kitware.com/Bug/view.php?id=12301
-if (MINGW)
-  if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Debug CACHE STRING "Choose the type of build,
-  options are: None(CMAKE_CXX_FLAGS or CMAKE_C_FLAGS used) Debug Release
-  RelWithDebInfo MinSizeRel Coverage." FORCE)
-  endif()
-endif()
+include(FeatureSummary)
+find_package(ECM 5.64.0 CONFIG)
+set_package_properties(ECM PROPERTIES
+  TYPE REQUIRED
+  DESCRIPTION "Extra CMake Modules."
+  URL "https://projects.kde.org/projects/kdesupport/extra-cmake-modules"
+)
+feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
+
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+
+include(KDEInstallDirs)
+include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
+include(KDECMakeSettings)
+
+set(REQUIRED_QT_VERSION 5.2.0)
+find_package(Qt5Core ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE)
+find_package(Qt5Gui ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE)
+find_package(Qt5Qml ${REQUIRED_QT_VERSION} NO_MODULE)
+
+set_package_properties(Qt5Qml PROPERTIES
+    TYPE OPTIONAL
+    PURPOSE "Build Javascript binding for Grantlee"
+)
+set_package_properties(Qt5Gui PROPERTIES
+    TYPE OPTIONAL
+    PURPOSE "Required to build TextDocument Grantlee library"
+)
+
+include(ECMAddQch)
+
+set(EXCLUDE_DEPRECATED_BEFORE_AND_AT 0 CACHE STRING "Control the range of deprecated API excluded from the build [default=0].")
 
 option( BUILD_TEMPLATES "Build the Grantlee template library" TRUE )
 option( BUILD_TEXTDOCUMENT "Build the Grantlee textdocument library" TRUE )
@@ -65,6 +90,8 @@ add_definitions(
   -DQT_USE_QSTRINGBUILDER
   -DQT_DISABLE_DEPRECATED_BEFORE=0x050d00
 )
+
+add_compile_options(-fexceptions)
 
 # Always include the source and build directories in the include path
 # to save doing so manually in every subdirectory.
@@ -179,3 +206,5 @@ if (DOXYGEN_FOUND AND DOXYGEN_DOT_FOUND)
     ${DOCS_ARGS}
   )
 endif()
+
+feature_summary(WHAT ALL   FATAL_ON_MISSING_REQUIRED_PACKAGES)

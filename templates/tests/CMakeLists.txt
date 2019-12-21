@@ -60,7 +60,7 @@ macro(grantlee_templates_unit_tests)
     add_executable(${_testname}_exec
                   ${_testname}.cpp
     )
-    add_test(${_testname} ${_testname}_exec )
+    add_test(${_testname} ${CMAKE_BINARY_DIR}/bin/${_testname}_exec )
     target_link_libraries(${_testname}_exec Grantlee5::Templates template_test_builtins)
 
     if (Qt5Qml_FOUND)
