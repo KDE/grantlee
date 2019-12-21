@@ -98,13 +98,10 @@ set(Grantlee5_MIN_PLUGIN_VERSION 0)
 
 set(Grantlee5_MAJOR_MINOR_VERSION_STRING "${Grantlee5_VERSION_MAJOR}.${Grantlee5_VERSION_MINOR}" )
 
-set (LIB_SUFFIX "" CACHE STRING "Define suffix of library directory name (eg. '64')")
-
-set( LIB_INSTALL_DIR lib${LIB_SUFFIX} )
-set( PLUGIN_INSTALL_DIR ${LIB_INSTALL_DIR}/grantlee/${Grantlee5_MAJOR_MINOR_VERSION_STRING} )
+set(PLUGIN_INSTALL_DIR ${KDE_INSTALL_LIBDIR}/grantlee/${Grantlee5_MAJOR_MINOR_VERSION_STRING})
 
 # set up RPATH/install_name_dir
-set( CMAKE_INSTALL_NAME_DIR ${CMAKE_INSTALL_PREFIX}/${LIB_INSTALL_DIR})
+set( CMAKE_INSTALL_NAME_DIR ${KDE_INSTALL_FULL_LIBDIR})
 set( CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 include("${Grantlee_MODULE_DIR}/GrantleeMacros.cmake")
@@ -117,7 +114,7 @@ if (BUILD_TEXTDOCUMENT)
   add_subdirectory(textdocument)
 endif()
 
-set(CMAKECONFIG_INSTALL_DIR "${LIB_INSTALL_DIR}/cmake/Grantlee${Grantlee5_VERSION_MAJOR}" )
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/Grantlee${Grantlee5_VERSION_MAJOR}" )
 
 configure_file(
   "${Grantlee_MODULE_DIR}/Grantlee${Grantlee5_VERSION_MAJOR}Config.cmake.in"

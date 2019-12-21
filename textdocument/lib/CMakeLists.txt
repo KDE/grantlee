@@ -45,10 +45,10 @@ set_target_properties(Grantlee_TextDocument PROPERTIES
 )
 
 install(TARGETS Grantlee_TextDocument EXPORT grantlee_targets
-  RUNTIME DESTINATION bin COMPONENT TextDocument
-  LIBRARY DESTINATION ${LIB_INSTALL_DIR} COMPONENT TextDocument
-  ARCHIVE DESTINATION ${LIB_INSTALL_DIR} COMPONENT TextDocument
-  INCLUDES DESTINATION include
+  RUNTIME DESTINATION ${KDE_INSTALL_BINDIR} COMPONENT TextDocument
+  LIBRARY DESTINATION ${KDE_INSTALL_LIBDIR} COMPONENT TextDocument
+  ARCHIVE DESTINATION ${KDE_INSTALL_LIBDIR} COMPONENT TextDocument
+  INCLUDES DESTINATION ${KDE_INSTALL_INCLUDEDIR}
 )
 
 install(FILES
@@ -59,10 +59,10 @@ install(FILES
   texthtmlbuilder.h
   mediawikimarkupbuilder.h
   ${CMAKE_CURRENT_BINARY_DIR}/grantlee_textdocument_export.h
-  DESTINATION include/grantlee COMPONENT TextDocument
+  DESTINATION ${KDE_INSTALL_INCLUDEDIR}/grantlee COMPONENT TextDocument
 )
 
 install(FILES
   grantlee_textdocument.h
-  DESTINATION include COMPONENT TextDocument
+  DESTINATION ${KDE_INSTALL_INCLUDEDIR} COMPONENT TextDocument
 )

@@ -1,7 +1,7 @@
 
 configure_file(grantlee_version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/grantlee_version.h)
 
-set(Grantlee_PLUGIN_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/${LIB_INSTALL_DIR} )
+set(Grantlee_PLUGIN_INSTALL_DIR ${KDE_INSTALL_FULL_LIBDIR})
 
 configure_file(grantlee_config_p.h.cmake  ${CMAKE_CURRENT_BINARY_DIR}/grantlee_config_p.h)
 
@@ -122,10 +122,10 @@ set_target_properties(Grantlee_Templates PROPERTIES
 )
 
 install(TARGETS Grantlee_Templates EXPORT grantlee_targets
-  RUNTIME DESTINATION bin COMPONENT Templates
-  LIBRARY DESTINATION ${LIB_INSTALL_DIR} COMPONENT Templates
-  ARCHIVE DESTINATION ${LIB_INSTALL_DIR} COMPONENT Templates
-  INCLUDES DESTINATION include
+  RUNTIME DESTINATION ${KDE_INSTALL_BINDIR} COMPONENT Templates
+  LIBRARY DESTINATION ${KDE_INSTALL_LIBDIR} COMPONENT Templates
+  ARCHIVE DESTINATION ${KDE_INSTALL_LIBDIR} COMPONENT Templates
+  INCLUDES DESTINATION ${KDE_INSTALL_INCLUDEDIR}
 )
 
 install(FILES
@@ -152,10 +152,10 @@ install(FILES
   token.h
   util.h
   variable.h
-  DESTINATION include/grantlee COMPONENT Templates
+  DESTINATION ${KDE_INSTALL_INCLUDEDIR}/grantlee COMPONENT Templates
 )
 
 install(FILES
   grantlee_templates.h
-  DESTINATION include COMPONENT Templates
+  DESTINATION ${KDE_INSTALL_INCLUDEDIR} COMPONENT Templates
 )
