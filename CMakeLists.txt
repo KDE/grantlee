@@ -49,8 +49,6 @@ set(Grantlee_MODULE_DIR ${CMAKE_SOURCE_DIR}/cmake/modules)
 list(APPEND CMAKE_MODULE_PATH ${Grantlee_MODULE_DIR})
 
 include(GenerateExportHeader)
-set(CMAKE_CXX_VISIBILITY_PRESET hidden)
-set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
 
 if (CMAKE_GENERATOR STREQUAL "Unix Makefiles")
   # create coverage build type
@@ -66,43 +64,23 @@ if (CMAKE_GENERATOR STREQUAL "Unix Makefiles")
 endif()
 
 if (CMAKE_COMPILER_IS_GNUCXX)
-  set (CMAKE_C_FLAGS   "${CMAKE_C_FLAGS} -Wno-long-long -std=iso9899:1990 -Wundef -Wcast-align -Werror-implicit-function-declaration -Wchar-subscripts -Wall -W -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -fno-common")
-  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Wno-long-long -Wundef -Wcast-align -Wchar-subscripts -Wall -W -Wpointer-arith -Wformat-security -fno-check-new -fno-common -pedantic-errors")
-
-  if (NOT APPLE)
-    set ( CMAKE_SHARED_LINKER_FLAGS "-Wl,--fatal-warnings -Wl,--no-undefined ${CMAKE_SHARED_LINKER_FLAGS}")
-    set ( CMAKE_MODULE_LINKER_FLAGS "-Wl,--fatal-warnings -Wl,--no-undefined ${CMAKE_MODULE_LINKER_FLAGS}")
-  endif ()
+  set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS} -std=iso9899:1990 -Werror-implicit-function-declaration")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-check-new -pedantic-errors")
 endif()
 
 add_definitions(
-  -DQT_NO_CAST_TO_ASCII
-  -DQT_NO_CAST_FROM_ASCII
   -DQT_STRICT_ITERATORS
-  -DQT_NO_URL_CAST_FROM_STRING
-  -DQT_NO_CAST_FROM_BYTEARRAY
   -DQT_NO_KEYWORDS
-  -DQT_USE_QSTRINGBUILDER
   -DQT_DISABLE_DEPRECATED_BEFORE=0x050d00
 )
 
 kde_enable_exceptions()
-
-# Always include the source and build directories in the include path
-# to save doing so manually in every subdirectory.
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_INCLUDE_CURRENT_DIR_IN_INTERFACE ON)
-set(CMAKE_AUTOMOC ON)
 
 set(Grantlee5_MIN_PLUGIN_VERSION 0)
 
 set(Grantlee5_MAJOR_MINOR_VERSION_STRING "${Grantlee5_VERSION_MAJOR}.${Grantlee5_VERSION_MINOR}" )
 
 set(PLUGIN_INSTALL_DIR ${KDE_INSTALL_LIBDIR}/grantlee/${Grantlee5_MAJOR_MINOR_VERSION_STRING})
-
-# set up RPATH/install_name_dir
-set( CMAKE_INSTALL_NAME_DIR ${KDE_INSTALL_FULL_LIBDIR})
-set( CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 include("${Grantlee_MODULE_DIR}/GrantleeMacros.cmake")
 
