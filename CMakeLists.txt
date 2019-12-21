@@ -86,7 +86,7 @@ add_definitions(
   -DQT_DISABLE_DEPRECATED_BEFORE=0x050d00
 )
 
-add_compile_options(-fexceptions)
+kde_enable_exceptions()
 
 # Always include the source and build directories in the include path
 # to save doing so manually in every subdirectory.
