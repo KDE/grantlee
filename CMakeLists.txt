@@ -45,10 +45,6 @@ option( BUILD_TEXTDOCUMENT "Build the Grantlee textdocument library" TRUE )
 option( BUILD_MAIN_PLUGINS "Build the Grantlee Templates plugins" TRUE )
 option( BUILD_I18N_PLUGIN "Build the Grantlee Templates i18n plugin" TRUE )
 
-if (BUILD_TESTING)
-  enable_testing()
-endif()
-
 set(Grantlee_MODULE_DIR ${CMAKE_SOURCE_DIR}/cmake/modules)
 list(APPEND CMAKE_MODULE_PATH ${Grantlee_MODULE_DIR})
 
