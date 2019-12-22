@@ -23,7 +23,7 @@
 #include "metatype.h"
 #include "util.h"
 #include "variable.h"
-
+#include <QRandomGenerator>
 #include <QDateTime>
 
 QVariant JoinFilter::doFilter(const QVariant &input, const QVariant &argument,
@@ -138,8 +138,7 @@ QVariant RandomFilter::doFilter(const QVariant &input, const QVariant &argument,
   if (varList.isEmpty())
     return QVariant();
 
-  qsrand(QDateTime::currentDateTimeUtc().toSecsSinceEpoch());
-  auto rnd = qrand() % varList.size();
+  auto rnd = QRandomGenerator::global()->bounded(varList.size());
   return varList.at(rnd);
 }
 
