@@ -843,7 +843,7 @@ QList<int> MarkupDirector::getElementsToOpen(QTextBlock::iterator it)
   }
 
   if (d->m_elementsToOpen.size() <= 1) {
-    return d->m_elementsToOpen.toList();
+    return d->m_elementsToOpen.values();
   }
   return sortOpeningOrder(d->m_elementsToOpen, it);
 }
