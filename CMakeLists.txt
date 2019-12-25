@@ -65,7 +65,7 @@ endif()
 
 if (CMAKE_COMPILER_IS_GNUCXX)
   set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS} -std=iso9899:1990 -Werror-implicit-function-declaration")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-check-new -pedantic-errors")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-check-new")
 endif()
 
 add_definitions(
